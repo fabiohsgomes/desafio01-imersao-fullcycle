@@ -7,7 +7,7 @@ desenvolvimento.
 
 Execute o comando
 ``` bash
-docker build . -t [nome da imagem] -f ./.docker/Dockerfile
+docker build . -t [nome da imagem] -f ./.docker/Dockerfile.multistage
 ```
 ## Para executar a imagem
 

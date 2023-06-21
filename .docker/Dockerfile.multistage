@@ -1,0 +1,22 @@
+##
+## STEP 1 - BUILD
+##
+FROM golang:1.20.5-alpine AS build
+
+WORKDIR /opt/golang-app/
+
+COPY ../cmd/desafio01.go /opt/golang-app/desafio01.go
+
+RUN go build desafio01.go \
+    && rm desafio01.go
+
+##
+## STEP 2 - DEPLOY
+##
+FROM scratch
+
+WORKDIR /
+
+COPY --from=build /opt/golang-app/desafio01 /usr/local/bin/desafio01
+
+CMD [ "desafio01" ]
