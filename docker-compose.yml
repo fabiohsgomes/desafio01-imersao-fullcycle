@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: imersao-devfullcycle-desafio-01
+    volumes:
+      - .:/home/go/app
